@@ -1,5 +1,4 @@
 ---
-import Hello from "../components/Hello.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import Images from "../components/Images.astro";
@@ -9,14 +8,13 @@ import Images from "../components/Images.astro";
 ---
 
 <Layout>
-  <section class="container mx-auto px-52 text-justify">
+  <section class="container mx-auto px-80 text-justify space-y-7">
     <Navbar />
-    <Hello />
-    <div class="gif">
+    <div class="flex justify-center">
       <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp" />
     </div>
     <h1>Milky-Way</h1>
-    <span class="badge">Digital Craftsman (Developer)</span>
+    <span class="bg-indigo-500 text-sm text-indigo-100 items-center font-bold rounded-md px-1">Digital Craftsman (Developer)</span>
     <h2>About</h2>
     <p>
       Praesent malesuada mi nisi, quis tempus magna venenatis ut. Suspendisse
@@ -35,13 +33,13 @@ import Images from "../components/Images.astro";
       In hac habitasse platea dictumst. Maecenas mollis turpis vitae turpis
       bibendum, vitae tristique arcu eleifend.
     </p>
-    <div class="center">
+    <div class="block items-center text-center">
       <a href="/works/">
-        <button class="">My portfolio</button>
+        <button class="border-2 rounded-3xl px-5 py-2 bg-indigo-500 font-bold hover:bg-transparent duration-300">My portfolio</button>
       </a>
     </div>
     <h2>Skills</h2>
-    <div class="flex gap-3">
+    <div class="flex justify-evenly">
       <img
         class="skills__img"
         width="46"
