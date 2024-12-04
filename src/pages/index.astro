@@ -1,16 +1,16 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import Images from "../components/Images.astro";
+import Skills from "../components/Skills.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <div class="container mx-auto px-[25rem] text-justify space-y-7">
+  <div class="main">
     <Navbar />
-    <div class="flex justify-center">
+    <div class="gif">
       <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp" />
     </div>
     <section
@@ -18,7 +18,7 @@ import Images from "../components/Images.astro";
     >
       <h1 class="pb-5">Milky-Way</h1>
       <span
-        class="bg-slate-600 text-sm text-slate-200 items-center font-bold rounded-md px-1 py-0.5"
+        class="badge"
         >Digital Craftsman (Developer)</span
       >
       <h2>About</h2>
@@ -40,7 +40,7 @@ import Images from "../components/Images.astro";
         turpis bibendum, vitae tristique arcu eleifend.
       </p>
       <div class="block items-center text-center my-4">
-        <a href="/works/">
+        <a href="/projects">
           <button
             class="border-2 rounded-xl px-5 py-2 border-wisteria font-bold hover:bg-wisteria hover:text-black duration-300"
             >My portfolio</button
@@ -48,71 +48,7 @@ import Images from "../components/Images.astro";
         </a>
       </div>
       <h2 class="mt-0">Skills</h2>
-      <div class="flex justify-evenly">
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="C#"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="DotNetCore"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="TypeScript"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="Angular"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="Bootstrap"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="CSS"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="HTML"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="JavaScript"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-        />
-        <img
-          class="skills__img"
-          width="46"
-          height="46"
-          alt="Git"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-        />
-      </div>
+      <Skills />
       <h2>Interests</h2>
       <p>
         Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh consequat

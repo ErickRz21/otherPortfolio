@@ -4,7 +4,7 @@
 
 :root {
   --header: "Pacifico", cursive;
-  --body: 'Josefin Sans', sans-serif;
+  --body: "Josefin Sans", sans-serif;
 }
 
 html,
@@ -28,8 +28,12 @@ p {
   font-family: var(--body);
 }
 
+.main {
+  @apply container mx-auto px-[25rem] text-justify space-y-7;
+}
+
 .icons {
-  @apply border-2 rounded-full p-2.5 hover:border-wisteria duration-300;
+  @apply border-2 rounded-full p-2.5 hover:border-wisteria hover:bg-wisteria/60 duration-300;
 }
 
 .icons img {
@@ -40,3 +44,23 @@ li {
   @apply hover:text-wisteria duration-300;
 }
 
+.projects {
+  @apply h-72 lg:h-[300px] w-full object-cover duration-700 rounded-2xl hover:bg-red-500;
+}
+
+.overlay {
+  @apply absolute inset-0 bg-black/20 bg-opacity-50 group-hover:bg-wisteria/20 duration-300 rounded-2xl flex items-end justify-center py-5;
+}
+
+.overlay span {
+  text-shadow: 0 3px 3px black;
+  @apply text-2xl text-white font-bold;
+}
+
+.gif {
+  @apply flex justify-center items-center;
+}
+
+.badge {
+  @apply bg-slate-600 text-sm text-slate-200 items-center font-bold rounded-md px-1 py-0.5;
+}
