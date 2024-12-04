@@ -2,7 +2,13 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'gunmetal': '#1E252E',
+				'gunmetal-bg': '#28323E',
+				'wisteria': '#B4A0E5',
+			},
+		},
 	},
 	plugins: [],
 }

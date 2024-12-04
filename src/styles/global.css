@@ -2,19 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header: "Pacifico", cursive;
+  --body: 'Josefin Sans', sans-serif;
+}
+
 html,
 body {
-  @apply m-0 w-full h-full bg-neutral-950 text-white;
+  @apply m-0 w-full h-full bg-gunmetal text-slate-200;
+  font-family: var(--body);
 }
 
 h1 {
-  @apply text-5xl font-bold;
+  @apply text-5xl font-medium;
+  font-family: var(--header);
 }
 
 h2 {
-  @apply text-4xl font-bold underline underline-offset-4;
+  @apply text-4xl font-medium underline underline-offset-4 my-5 decoration-wisteria;
+  font-family: var(--header);
 }
 
 p {
   @apply text-base;
+  font-family: var(--body);
 }
+
+.icons {
+  @apply border-2 rounded-full p-2.5 hover:border-wisteria duration-300;
+}
+
+.icons img {
+  @apply w-5 h-5;
+}
+
+li {
+  @apply hover:text-wisteria duration-300;
+}
+
