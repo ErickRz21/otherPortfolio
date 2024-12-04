@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects"); // Fetch all projects
+---
+
+<div
+  class="bg-gunmetal-bg border border-gray-700 my-0 mx-auto p-10 rounded-2xl shadow-xl space-y-7"
+>
+  <h2>Projects</h2>
+  <div class="grid grid-cols-2 gap-2">
+    {
+      projects.map(
+        (project: {
+          slug: any;
+          data: {
+            image: { url: string | null | undefined; alt: any };
+            title: unknown;
+          };
+        }) => (
+          <a href={`/projects/${project.slug}`} class="relative group block">
+            <img
+              src={project.data.image.url}
+              alt={project.data.image.alt || "Project image"}
+              class="projects w-full h-full"
+            />
+            <div class="overlay">
+              <span>{project.data.title}</span>
+            </div>
+          </a>
+        )
+      )
+    }
+  </div>
+</div>

@@ -1,5 +1,5 @@
 ---
-title: "Batman"
+title: "Batmanesque"
 description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
 image:
   url: "/Batman.jpg"
