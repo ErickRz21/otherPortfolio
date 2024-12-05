@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MarkdownWorksLayout from "../../layouts/MarkdownWorksLayout.astro";
+import MdProjects from "../../layouts/MdProjects.astro";
 
 export const prerender = true;
 export async function getStaticPaths() {
@@ -15,6 +15,6 @@ const { entry } = Astro.props as { entry: { render: () => Promise<{ Content: any
 const { Content } = await entry.render();
 ---
 
-<MarkdownWorksLayout frontmatter={entry.data}>
+<MdProjects frontmatter={entry.data}>
   <Content />
-</MarkdownWorksLayout>
+</MdProjects>

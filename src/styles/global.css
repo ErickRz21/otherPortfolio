@@ -9,7 +9,7 @@
 
 html,
 body {
-  @apply m-0 w-full h-full bg-gunmetal text-slate-200;
+  @apply m-0 w-full h-full bg-gunmetal text-slate-200 scroll-smooth;
   font-family: var(--body);
 }
 
@@ -45,7 +45,7 @@ li {
 }
 
 .projects {
-  @apply h-72 lg:h-[300px] w-full object-cover duration-700 rounded-2xl hover:bg-red-500;
+  @apply h-72 lg:h-[300px] w-full object-cover duration-700 rounded-2xl hover:bg-red-500 shadow-xl;
 }
 
 .overlay {
@@ -64,10 +64,6 @@ li {
 .badge {
   padding: 0.3em 0.6em 0.2em;
   font-size: 0.85rem;
-  @apply bg-slate-600 text-slate-200 font-bold rounded-md;
+  @apply bg-slate-600 text-slate-200 font-bold rounded-md mr-2;
 }
 
-.badge__link {
-  color: var(--text-link);
-  text-decoration: none;
-}

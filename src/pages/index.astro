@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import Skills from "../components/Skills.astro";
+import Work from "../components/Work.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -17,10 +18,7 @@ import Skills from "../components/Skills.astro";
       class="border p-10 rounded-2xl bg-gunmetal-bg border-gray-700 shadow-xl"
     >
       <h1 class="pb-5">Milky-Way</h1>
-      <span
-        class="badge"
-        >Digital Craftsman (Developer)</span
-      >
+      <span class="badge">Digital Craftsman (Developer)</span>
       <h2>About</h2>
       <p>
         Praesent malesuada mi nisi, quis tempus magna venenatis ut. Suspendisse
@@ -39,15 +37,7 @@ import Skills from "../components/Skills.astro";
         nec. In hac habitasse platea dictumst. Maecenas mollis turpis vitae
         turpis bibendum, vitae tristique arcu eleifend.
       </p>
-      <div class="block items-center text-center my-4">
-        <a href="/projects">
-          <button
-            class="border-2 rounded-xl px-5 py-2 border-wisteria font-bold hover:bg-wisteria hover:text-black duration-300"
-            >My portfolio</button
-          >
-        </a>
-      </div>
-      <h2 class="mt-0">Skills</h2>
+      <h2>Skills</h2>
       <Skills />
       <h2>Interests</h2>
       <p>
@@ -58,5 +48,6 @@ import Skills from "../components/Skills.astro";
         turpis bibendum, vitae tristique arcu eleifend.
       </p>
     </section>
+    <Work />
   </div>
 </Layout>
