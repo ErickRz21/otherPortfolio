@@ -8,14 +8,14 @@ const { frontmatter } = Astro.props;
   <div class="main">
     <Navbar />
     <div class="gif">
-      <img width="300" height="259" alt="RaccoonLaptopGif" src="/laptop.webp" />
+      <img alt="RaccoonLaptopGif" src="/laptop.webp" />
     </div>
     <div
-      class="bg-gunmetal-bg border border-gray-700 my-0 mx-auto p-10 rounded-2xl shadow-xl space-y-7"
+      class="main__container"
     >
-      <h2>{frontmatter.title}</h2>
+      <h2 class="mt-0">{frontmatter.title}</h2>
       <slot />
-      <ul>
+      <ul class="my-3">
         <li class="hover:text-current">
           <span class="badge">PLATFORM</span>{frontmatter.platform}
         </li>
@@ -38,14 +38,14 @@ const { frontmatter } = Astro.props;
         </li>
       </ul>
       <div class="flex justify-center items-center">
-        <div class="flex flex-col space-y-4">
+        <div class="flex flex-col space-y-3">
           <img
-            class="w-[500px] h-[281] rounded-2xl shadow-xl"
+            class="rounded-2xl shadow-xl"
             src={frontmatter.worksImage1?.url || "default-image-url.jpg"}
             alt={frontmatter.worksImage1?.alt || "Default alt text"}
           />
           <img
-            class="w-[500px] h-[281] rounded-2xl shadow-xl"
+            class="rounded-2xl shadow-xl"
             src={frontmatter.worksImage1?.url || "default-image-url.jpg"}
             alt={frontmatter.worksImage1?.alt || "Default alt text"}
           />
