@@ -4,10 +4,7 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects"); // Fetch all projects
 ---
 
-<div
-  class="main__container"
-  id="projects"
->
+<section class="main__container" id="projects" tabindex="-1">
   <h2 class="mt-0">Projects</h2>
   <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-2">
     {
@@ -33,4 +30,4 @@ const projects = await getCollection("projects"); // Fetch all projects
       )
     }
   </div>
-</div>
+</section>
