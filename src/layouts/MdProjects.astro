@@ -10,26 +10,24 @@ const { frontmatter } = Astro.props;
     <div class="gif">
       <img alt="RaccoonLaptopGif" src="/laptop.webp" />
     </div>
-    <div
-      class="main__container"
-    >
+    <div class="main__container">
       <h2 class="mt-0">{frontmatter.title}</h2>
       <slot />
-      <ul class="my-3">
-        <li class="hover:text-current">
+      <ul class="my-3 text-xs lg:text-base">
+        <li class="hover:text-current py-1">
           <span class="badge">PLATFORM</span>{frontmatter.platform}
         </li>
-        <li class="hover:text-current">
+        <li class="hover:text-current py-1">
           <span class="badge">STACK</span>{frontmatter.stack}
         </li>
-        <li>
+        <li class="py-1">
           <span class="badge">WEBSITE</span><a
             class="hover:underline text-wisteria"
             href={frontmatter.website}
             target="_blank">{frontmatter.website}</a
           >
         </li>
-        <li>
+        <li class="py-1">
           <span class="badge">GITHUB</span><a
             class="hover:underline text-wisteria"
             href={frontmatter.github}
