@@ -85,7 +85,7 @@ p {
 }
 
 .nav-link {
-  @apply relative bg-transparent text-white px-6 py-4 rounded-full duration-300  focus-within:text-black !important;
+  @apply relative bg-transparent text-white px-6 py-4 rounded-full duration-300;
 }
 
 #slider {
