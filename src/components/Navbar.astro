@@ -10,36 +10,27 @@
   </ul>
 </nav> -->
 <nav
-  class="fixed
-  bottom-3
-  mx-10
-  lg:mx-auto
-  my-2
-  lg:my-0
-  lg:px-6
-  left-0
-  right-0
-  lg:sticky
-  lg:top-3
-  z-40
-  dark:bg-gunmetal-bg
-  py-3
-  rounded-full
-  shadow-lg
-  border
-  dark:border-gray-700"
+  class="fixed bottom-2 lg:top-2 lg:sticky mx-10 lg:mx-[9rem] left-0 right-0 z-40 dark:bg-gunmetal-bg py-3 rounded-full shadow-lg border dark:border-gray-700"
   role="navigation"
   aria-label="Main navigation"
 >
-  <ul class="flex justify-center space-x-0 font-semibold text-lg items-center">
-    <li>
-      <a href="#home" class="nav-link">Home</a>
+  <ul
+    class="relative flex justify-center space-x-0 font-semibold text-lg items-center"
+  >
+    <!-- Slider indicator -->
+    <div id="slider"></div>
+    <!-- Navigation links -->
+    <li class="hidden lg:block px-6">
+      <h2 class="text-2xl no-underline my-0">Portfolio</h2>
     </li>
     <li>
-      <a href="#projects" class="nav-link">Works</a>
+      <a href="/#home" class="nav-link" tabindex="0">Home</a>
     </li>
     <li>
-      <a href="#footer" class="nav-link">Contact</a>
+      <a href="/#projects" class="nav-link">Works</a>
+    </li>
+    <li>
+      <a href="/#footer" class="nav-link">Contact</a>
     </li>
   </ul>
 </nav>
@@ -65,5 +56,28 @@
         link.classList.add("active");
       }
     });
+  });
+
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const slider = document.getElementById("slider") as HTMLElement | null;
+
+  function updateSlider(link: HTMLAnchorElement): void {
+    if (slider) {
+      const { offsetWidth, offsetLeft } = link; // Get link's dimensions
+      slider.style.width = `${offsetWidth}px`;
+      slider.style.left = `${offsetLeft}px`;
+    }
+  }
+
+  // Add focus event listeners to each navigation link
+  navLinks.forEach((link) => {
+    link.addEventListener("focus", () => updateSlider(link));
+  });
+
+  // Set the slider on initial load (default to the first link)
+  window.addEventListener("DOMContentLoaded", () => {
+    if (slider && navLinks.length > 0) {
+      updateSlider(navLinks[0]); // Defaults to the first link
+    }
   });
 </script>
