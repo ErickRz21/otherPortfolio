@@ -81,7 +81,7 @@ p {
 
 .badge {
   padding: 0.3em 0.6em 0.2em;
-  @apply bg-slate-600 text-slate-200 font-bold rounded-md mr-2 text-xs;
+  @apply bg-slate-600 text-slate-200 font-bold rounded-md mr-2 text-xs capitalize;
 }
 
 .nav-link {

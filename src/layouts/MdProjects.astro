@@ -15,20 +15,20 @@ const { frontmatter } = Astro.props;
       <slot />
       <ul class="my-3 text-xs lg:text-base">
         <li class="hover:text-current py-1">
-          <span class="badge">PLATFORM</span>{frontmatter.platform}
+          <span class="badge">platform</span>{frontmatter.platform}
         </li>
         <li class="hover:text-current py-1">
-          <span class="badge">STACK</span>{frontmatter.stack}
+          <span class="badge">stack</span>{frontmatter.stack}
         </li>
         <li class="py-1">
-          <span class="badge">WEBSITE</span><a
+          <span class="badge">website</span><a
             class="hover:underline text-wisteria"
             href={frontmatter.website}
             target="_blank">{frontmatter.website}</a
           >
         </li>
         <li class="py-1">
-          <span class="badge">GITHUB</span><a
+          <span class="badge">github</span><a
             class="hover:underline text-wisteria"
             href={frontmatter.github}
             target="_blank">{frontmatter.github}</a
