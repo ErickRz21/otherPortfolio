@@ -67,7 +67,7 @@ import Work from "../components/Work.astro";
       gsap.from(mainContainer, {
         opacity: 0,
         y: 50,
-        duration: 1,
+        duration: 2,
         ease: "power2.out",
         scrollTrigger: {
           trigger: mainContainer,
@@ -107,13 +107,14 @@ import Work from "../components/Work.astro";
       gsap.from(workSection, {
         opacity: 0,
         y: 50,
-        duration: 3,
+        scale: 0.9, // Adds a slight zoom-in effect
+        duration: 2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: workSection, // Element to trigger the animation
-          start: "top 80%", // When the element's top is 80% from the top of the viewport
-          end: "top 50%", // When the element's top reaches 50% from the top
-          scrub: true, // Smooth scrolling animation
+          trigger: workSection,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
         },
       });
     });
