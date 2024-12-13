@@ -1,10 +1,23 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "module": "esnext", // Ensures ES Module syntax is supported
+    "target": "esnext", // Targets modern JavaScript for GSAP compatibility
+    "strict": true, // Ensures strict type checking
+    "baseUrl": ".", // Allows absolute imports if needed
+    "paths": {
+      "@/*": ["src/*"] // Optional: Aliases for easier imports
+    },
+    "types": ["node"], // Includes Node.js type definitions
+    "allowSyntheticDefaultImports": true, // Allows default imports for CommonJS modules
+    "esModuleInterop": true // Ensures compatibility with CommonJS modules like GSAP
+  },
   "include": [
     ".astro/types.d.ts",
     "**/*"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "node_modules"
   ]
 }
