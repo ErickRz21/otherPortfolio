@@ -1,7 +1,10 @@
 ---
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+export interface Props {
+  title: string;
+}
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,11 +25,10 @@ const { pageTitle } = Astro.props;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>What</title>
+    <title>{title ?? "Portfolio"}</title>
   </head>
   <body>
     <slot />
     <Footer />
   </body>
-  
 </html>
