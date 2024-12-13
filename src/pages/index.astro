@@ -36,7 +36,9 @@ import Work from "../components/Work.astro";
         turpis bibendum, vitae tristique arcu eleifend.
       </p>
       <h2>Skills</h2>
-      <Skills />
+      <div class="skills">
+        <Skills />
+      </div>
       <h2>Interests</h2>
       <p>
         Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh consequat
@@ -59,7 +61,8 @@ import Work from "../components/Work.astro";
     document.addEventListener("DOMContentLoaded", () => {
       // Animate elements inside the main container
       const mainContainer = document.querySelector(".main__container");
-      const workSection = document.querySelector(".work"); // Adjust selector based on your Work component's container class or ID
+      const workSection = document.querySelector(".work");
+      const skillsSection = document.querySelector(".skills");
 
       gsap.from(mainContainer, {
         opacity: 0,
@@ -75,7 +78,7 @@ import Work from "../components/Work.astro";
       });
 
       // Additional animations for each section
-      gsap.from(".main__container h1, .main__container h2", {
+      gsap.from(".main__container h1, .main__container h2, .gif", {
         opacity: 0,
         y: -30,
         stagger: 0.3,
@@ -88,7 +91,7 @@ import Work from "../components/Work.astro";
         },
       });
 
-      gsap.from(".main__container p", {
+      gsap.from(".main__container p, .skills", {
         opacity: 0,
         y: 30,
         stagger: 0.2,
@@ -104,7 +107,7 @@ import Work from "../components/Work.astro";
       gsap.from(workSection, {
         opacity: 0,
         y: 50,
-        duration: 1,
+        duration: 3,
         ease: "power2.out",
         scrollTrigger: {
           trigger: workSection, // Element to trigger the animation
