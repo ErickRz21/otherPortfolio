@@ -33,7 +33,7 @@ p {
 }
 
 .main__container {
-  @apply border p-5 lg:p-10 rounded-2xl bg-gunmetal-bg border-gray-700 shadow-xl;
+  @apply border p-5 lg:p-10 rounded-2xl bg-gunmetal-bg border-gray-800 shadow-xl;
 }
 
 .icons {
@@ -55,15 +55,15 @@ p {
 }
 
 .skills__img {
-  @apply w-10 lg:w-14 h-10 lg:h-14 border-2 border-wisteria bg-wisteria/20 rounded-xl p-1 object-fill;
+  @apply w-10 lg:w-14 h-10 lg:h-14 border-2 border-wisteria bg-wisteria/20 rounded-2xl p-1 object-fill;
 }
 
 .projects {
-  @apply h-44 lg:h-[300px] w-full object-cover duration-700 rounded-xl shadow-xl;
+  @apply h-44 lg:h-[300px] w-full object-cover duration-700 rounded-2xl shadow-xl;
 }
 
 .overlay {
-  @apply absolute inset-0 bg-black/20 bg-opacity-50 duration-300 rounded-xl;
+  @apply absolute inset-0 bg-black/20 bg-opacity-50 duration-300 rounded-2xl;
   @apply group-hover:bg-wisteria/20 flex items-end justify-center py-5;
 }
 
@@ -90,5 +90,5 @@ p {
 }
 
 #slider {
-  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria rounded-full;
+  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria/90 rounded-full;
 }
