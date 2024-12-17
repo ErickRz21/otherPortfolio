@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+export function runAnimations() {
 document.addEventListener("DOMContentLoaded", () => {
   const mainContainer = document.querySelector(".main__container");
   const workSection = document.querySelector(".work");
@@ -63,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+}
