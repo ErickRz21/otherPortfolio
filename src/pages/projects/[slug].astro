@@ -3,15 +3,24 @@ import { getCollection } from "astro:content";
 import MdProjects from "../../layouts/MdProjects.astro";
 
 export const prerender = true;
+
 export async function getStaticPaths() {
+  // Fetch all projects from the "projects" collection
   const projectEntries = await getCollection("projects");
-  return projectEntries.map((entry: { slug: string; render: () => Promise<{ Content: any }>; data: any }) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+
+  // Map each entry to a route with props
+  return projectEntries.map((entry) => ({
+    params: { slug: entry.slug }, // Match the route to the slug
+    props: { entry }, // Pass the entry as props
   }));
 }
 
-const { entry } = Astro.props as { entry: { render: () => Promise<{ Content: any }>; data: any } };
+// Get the entry passed as a prop
+const { entry } = Astro.props as {
+  entry: { render: () => Promise<{ Content: any }>; data: any };
+};
+
+// Render the content for the current entry
 const { Content } = await entry.render();
 ---
 
