@@ -27,7 +27,7 @@ const projects = await getCollection("projects");
             >
               <span>{project.data.title}</span>
               <div class="mt-1">
-                <p class="text-sm lg:text-base">{project.data.description || "No description available."}</p>
+                <p class="text-sm lg:text-base font-semibold">{project.data.description || "No description available."}</p>
                 <div class="flex mt-1 mx-0">
                   {project.data.stack?.split(",").map((tech) => (
                     <p class="badge">{tech.trim()}</p>
