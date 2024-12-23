@@ -7,6 +7,10 @@
   --body: "Josefin Sans", sans-serif;
 }
 
+::selection {
+  @apply bg-wisteria text-gunmetal-bg;
+}
+
 html,
 body {
   @apply bg-gunmetal text-slate-200 scroll-smooth;
@@ -59,17 +63,18 @@ p {
 }
 
 .projects {
-  @apply h-44 lg:h-[300px] w-full object-cover duration-700 rounded-2xl shadow-xl;
+  @apply h-44 lg:h-[300px] w-full object-cover duration-700 rounded-2xl;
 }
 
 .overlay {
   @apply absolute inset-0 bg-black/20 bg-opacity-50 duration-300 rounded-2xl;
-  @apply group-hover:bg-wisteria/20 flex items-end justify-center py-5;
+  @apply group-hover:bg-gray-600/20 flex items-end justify-center py-4 hover:py-8;
 }
 
 .overlay span {
   text-shadow: 0 3px 3px black;
   @apply text-2xl text-white font-bold;
+  font-family: var(--header)
 }
 
 .gif {
