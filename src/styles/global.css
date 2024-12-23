@@ -33,11 +33,11 @@ p {
 }
 
 .main {
-  @apply container mx-auto px-5 lg:px-[25rem] text-justify space-y-7;
+  @apply container mx-auto px-3 lg:px-[25rem] text-justify space-y-7;
 }
 
 .main__container {
-  @apply border p-5 lg:p-10 rounded-2xl bg-gunmetal-bg border-gray-800 shadow-xl;
+  @apply border px-3 py-5 lg:p-10 rounded-2xl bg-gunmetal-bg border-gray-800 shadow-xl;
 }
 
 .icons {
@@ -63,11 +63,11 @@ p {
 }
 
 .projects {
-  @apply h-48 lg:h-[300px] w-full object-cover duration-700 rounded-2xl;
+  @apply h-48 lg:h-[300px] w-full object-cover duration-700 rounded-xl;
 }
 
 .overlay {
-  @apply absolute inset-0 bg-black/10 duration-300 rounded-2xl 
+  @apply absolute inset-0 bg-black/10 duration-300 rounded-xl 
   group-hover:bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center p-4 lg:p-5;
 }
 
