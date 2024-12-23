@@ -7,13 +7,17 @@ const projects = await getCollection("projects");
 
 <section class="main__container" id="projects" tabindex="-1">
   <h2 class="mt-0">Projects</h2>
-  <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-2">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
     {
       projects.map((project) => (
-        <a href={`/projects/${project.slug}`} class="relative group">
+        <a
+          href={`/projects/${project.slug}`}
+          class="relative group"
+          aria-label={`View details for ${project.data.title}`}
+        >
           <img
             src={project.data.image.url}
-            alt={project.data.image.alt || "Project image"}
+            alt={project.data.image.alt || `${project.data.title} image`}
             class="projects"
           />
           <div class="overlay px-5">
@@ -22,7 +26,6 @@ const projects = await getCollection("projects");
               <div class="mt-1">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <div class="flex mt-1 mx-0">
-                  {/* Render badges dynamically from the stack property */}
                   {project.data.stack?.split(",").map((tech) => (
                     <p class="badge">{tech.trim()}</p>
                   ))}
