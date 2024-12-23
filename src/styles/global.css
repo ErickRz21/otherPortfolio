@@ -63,12 +63,12 @@ p {
 }
 
 .projects {
-  @apply h-44 lg:h-[300px] w-full object-cover duration-700 rounded-2xl;
+  @apply h-48 lg:h-[300px] w-full object-cover duration-700 rounded-2xl;
 }
 
 .overlay {
   @apply absolute inset-0 bg-black/10 duration-300 rounded-2xl 
-  group-hover:bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center p-5;
+  group-hover:bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center p-4 lg:p-5;
 }
 
 .overlay span {
