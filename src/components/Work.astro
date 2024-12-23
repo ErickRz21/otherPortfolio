@@ -1,33 +1,37 @@
 ---
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects"); // Fetch all projects
+// Fetch all projects
+const projects = await getCollection("projects");
 ---
 
 <section class="main__container" id="projects" tabindex="-1">
   <h2 class="mt-0">Projects</h2>
   <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-2">
     {
-      projects.map(
-        (project: {
-          slug: any;
-          data: {
-            image: { url: string | null | undefined; alt: any };
-            title: unknown;
-          };
-        }) => (
-          <a href={`/projects/${project.slug}`} class="relative group">
-            <img
-              src={project.data.image.url}
-              alt={project.data.image.alt || "Project image"}
-              class="projects"
-            />
-            <div class="overlay">
+      projects.map((project) => (
+        <a href={`/projects/${project.slug}`} class="relative group">
+          <img
+            src={project.data.image.url}
+            alt={project.data.image.alt || "Project image"}
+            class="projects"
+          />
+          <div class="overlay px-5">
+            <div class="flex flex-col items-start text-start">
               <span>{project.data.title}</span>
+              <div class="mt-1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="flex mt-1 mx-0">
+                  {/* Render badges dynamically from the stack property */}
+                  {project.data.stack?.split(",").map((tech) => (
+                    <p class="badge">{tech.trim()}</p>
+                  ))}
+                </div>
+              </div>
             </div>
-          </a>
-        )
-      )
+          </div>
+        </a>
+      ))
     }
   </div>
 </section>
