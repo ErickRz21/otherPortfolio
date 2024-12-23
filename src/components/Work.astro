@@ -20,14 +20,14 @@ const projects = await getCollection("projects");
             alt={project.data.image.alt || `${project.data.title} image`}
             class="projects"
           />
-          <div class="overlay px-5">
+          <div class="overlay">
             <div
               class="flex flex-col items-start text-start opacity-0 translate-y-5 
             group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out"
             >
               <span>{project.data.title}</span>
               <div class="mt-1">
-                <p>{project.data.description || "No description available."}</p>
+                <p class="text-sm lg:text-base">{project.data.description || "No description available."}</p>
                 <div class="flex mt-1 mx-0">
                   {project.data.stack?.split(",").map((tech) => (
                     <p class="badge">{tech.trim()}</p>
