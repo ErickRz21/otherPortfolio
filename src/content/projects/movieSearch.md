@@ -11,7 +11,7 @@ worksImage2:
   url: "/image-2.webp"
   alt: "second image of your project."
 platform: Web
-stack: HTML, JavaScript
+stack: HTML, CSS, JavaScript
 website: https://moviesearchys.netlify.app/
 github: https://github.com/ErickRz21/BuscadorPeliculas
 ---

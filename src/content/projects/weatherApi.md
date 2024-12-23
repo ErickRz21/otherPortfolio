@@ -11,7 +11,7 @@ worksImage2:
   url: "/image-2.webp"
   alt: "second image of your project."
 platform: Web
-stack: React, TypeScript
+stack: React, TailWindCSS, TypeScript
 website: https://weatherarc.netlify.app/
 github: https://github.com/ErickRz21/weatherAPI
 ---
