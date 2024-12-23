@@ -1,6 +1,6 @@
 ---
 title: "Weather App"
-description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+description: "Web Page made with React uses OpenWeatherAPI to fetch the weather data from cities around the world."
 image:
   url: "/weatherApp.jpg"
   alt: "Batman"
