@@ -68,7 +68,7 @@ p {
 
 .overlay {
   @apply absolute inset-0 bg-black/20 bg-opacity-50 duration-300 rounded-2xl 
-  group-hover:bg-gradient-to-b from-transparent to-wisteria/40 flex items-end justify-center py-4 hover:py-8;
+  group-hover:bg-gradient-to-b from-transparent to-wisteria/40 flex items-end justify-center py-4;
 }
 
 .overlay span {

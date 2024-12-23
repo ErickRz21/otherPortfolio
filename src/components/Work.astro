@@ -21,7 +21,10 @@ const projects = await getCollection("projects");
             class="projects"
           />
           <div class="overlay px-5">
-            <div class="flex flex-col items-start text-start">
+            <div
+              class="flex flex-col items-start text-start opacity-0 translate-y-5 
+            group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+            >
               <span>{project.data.title}</span>
               <div class="mt-1">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
