@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".main__container p, .skills", {
     opacity: 0,
     y: 30,
-    stagger: 0.2,
+    stagger: 0.1,
     duration: 0.8,
     scrollTrigger: {
       trigger: mainContainer,
