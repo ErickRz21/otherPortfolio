@@ -60,13 +60,13 @@ const { frontmatter } = Astro.props;
         }
       </ul>
       {
-        frontmatter.worksImage1 && (
+        frontmatter.image && (
           <div class="flex justify-center items-center">
             <div class="flex flex-col space-y-3">
               <img
                 class="rounded-2xl shadow-xl"
-                src={frontmatter.worksImage1.url}
-                alt={frontmatter.worksImage1.alt || "Project work image"}
+                src={frontmatter.image.url}
+                alt={frontmatter.image.alt || "Project work image"}
               />
             </div>
           </div>

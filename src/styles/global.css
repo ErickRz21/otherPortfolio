@@ -41,7 +41,7 @@ p {
 }
 
 .icons {
-  @apply border-2 rounded-full p-2.5 hover:border-wisteria duration-300;
+  @apply text-white hover:text-wisteria hover:scale-125 duration-300 text-2xl;
 }
 
 .icons img {
