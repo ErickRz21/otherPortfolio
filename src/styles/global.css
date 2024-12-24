@@ -41,7 +41,7 @@ p {
 }
 
 .icons {
-  @apply border-2 rounded-full p-2.5 hover:border-wisteria hover:bg-wisteria/60 duration-300;
+  @apply border-2 rounded-full p-2.5 hover:border-wisteria duration-300;
 }
 
 .icons img {
@@ -63,7 +63,7 @@ p {
 }
 
 .projects {
-  @apply h-48 lg:h-[300px] w-full object-cover duration-700 rounded-xl;
+  @apply h-52 lg:h-[300px] w-full object-cover duration-700 rounded-xl;
 }
 
 .overlay {
