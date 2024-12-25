@@ -91,9 +91,9 @@ p {
 }
 
 .nav-link {
-  @apply relative bg-transparent text-white px-6 py-4 rounded-full duration-300;
+  @apply relative bg-transparent text-gray-200 hover:text-white px-6 py-4 rounded-full duration-300;
 }
 
 #slider {
-  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria/90 rounded-full;
+  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria/80 rounded-full;
 }
