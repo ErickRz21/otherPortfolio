@@ -59,7 +59,7 @@ p {
 }
 
 .skills__img {
-  @apply w-10 lg:w-14 h-10 lg:h-14 border-2 border-transparent bg-wisteria/20 rounded-2xl p-1 object-fill shadow-xl;
+  @apply w-12 lg:w-14 h-12 lg:h-14 border-2 border-gunmetal-bg bg-wisteria/40 rounded-2xl p-1.5 object-fill shadow-inner shadow-gray-950;
 }
 
 .projects {
@@ -95,5 +95,5 @@ p {
 }
 
 #slider {
-  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria/80 rounded-full;
+  @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-wisteria/80 rounded-full shadow-inner shadow-red-500;
 }
