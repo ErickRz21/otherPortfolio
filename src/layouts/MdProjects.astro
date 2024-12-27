@@ -13,24 +13,24 @@ const { frontmatter } = Astro.props;
     <div class="main__container">
       <h2 class="mt-0">{frontmatter.title}</h2>
       <slot />
-      <ul class="my-3 text-xs lg:text-base font-normal text-gray-300">
+      <ul class="my-3 text-xs lg:text-base font-normal text-gray-300 lg:font-semibold space-y-3">
         {
           frontmatter.platform && (
-            <li class="hover:text-current py-1">
+            <li class="hover:text-current">
               <span class="badge">platform</span> {frontmatter.platform}
             </li>
           )
         }
         {
           frontmatter.stack && (
-            <li class="hover:text-current py-1">
+            <li class="hover:text-current">
               <span class="badge">stack</span> {frontmatter.stack}
             </li>
           )
         }
         {
           frontmatter.website && (
-            <li class="py-1">
+            <li>
               <span class="badge">website</span>
               <a
                 class="text-wisteria hover:text-violet-200 duration-300"
@@ -45,7 +45,7 @@ const { frontmatter } = Astro.props;
         }
         {
           frontmatter.github && (
-            <li class="py-1">
+            <li>
               <span class="badge">github</span>
               <a
                 class="text-wisteria hover:text-violet-200 duration-300"

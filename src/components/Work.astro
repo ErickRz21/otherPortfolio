@@ -30,9 +30,9 @@ const projects = await getCollection("projects");
                 <p class="text-sm lg:text-base font-semibold">
                   {project.data.description || "No description available."}
                 </p>
-                <div class="flex mt-1 mx-0">
+                <div class="flex mt-1">
                   {project.data.stack?.split(",").map((tech) => (
-                    <p class="badge">
+                    <p class="badge mr-1">
                       {tech.trim()}
                     </p>
                   ))}
