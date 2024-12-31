@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  gsap.from(".work, .footer", {
+  gsap.from(".work", {
+    opacity: 0.5,
     y: 50,
     scale: 0.9,
     duration: 5,
@@ -60,6 +61,20 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 90%",
       end: "top 60%",
       scrub: 0.5,
+    },
+  });
+
+  gsap.from(footer, {
+    opacity: 0.5,
+    y: 50,
+    scale: 0.9,
+    duration: 5,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: footer,
+      start: "top 95%",
+      end: "top 80%",
+      scrub: true,
     },
   });
 });
