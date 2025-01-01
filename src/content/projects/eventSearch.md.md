@@ -2,8 +2,8 @@
 title: "Event App"
 description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
 image:
-  url: "/Batman.jpg"
-  alt: "Batman"
+  url: "/eventSearch.jpg"
+  alt: "Events Search"
 worksImage1:
   url: "/image-1.webp"
   alt: "first image of your project."
