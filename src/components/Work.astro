@@ -12,7 +12,7 @@ const projects = await getCollection("projects");
       projects.map((project) => (
         <a
           href={`/projects/${project.slug}`}
-          class="relative group"
+          class="relative group rounded-3xl overflow-hidden cursor-pointer"
           aria-label={`View details for ${project.data.title}`}
         >
           <img
