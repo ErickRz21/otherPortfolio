@@ -65,16 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   gsap.from(footer, {
-    opacity: 0.5,
+    opacity: 1,
     y: 50,
     scale: 0.9,
     duration: 5,
     ease: "power1.out",
     scrollTrigger: {
       trigger: footer,
-      start: "top 95%",
-      end: "top 80%",
-      scrub: true,
+      start: "top 99%",
+      end: "top 85%",
+      scrub: 0.5,
     },
   });
 });
