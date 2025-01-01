@@ -59,7 +59,7 @@ p {
 }
 
 .skills__img {
-  @apply w-12 lg:w-14 h-12 lg:h-14 border-2 border-gunmetal-bg bg-wisteria/40 rounded-3xl p-1.5 object-fill shadow-inner shadow-gray-950;
+  @apply w-12 lg:w-14 h-12 lg:h-14 border-2 border-gunmetal-bg bg-wisteria/40 rounded-2xl p-1.5 object-fill shadow-inner shadow-gray-950;
 }
 
 .projects {
@@ -67,7 +67,7 @@ p {
 }
 
 .overlay {
-  @apply absolute inset-0 bg-black/10 duration-500 rounded-2xl 
+  @apply absolute inset-0 bg-black/10 duration-500 rounded-3xl 
   group-hover:bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center p-4 lg:p-5;
 }
 
