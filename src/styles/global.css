@@ -33,7 +33,7 @@ p {
 }
 
 .main {
-  @apply container mx-auto px-3 lg:px-56 text-justify space-y-7;
+  @apply container mx-auto px-3 lg:px-56 text-justify space-y-7 overflow-hidden;
 }
 
 .main__container {
@@ -59,11 +59,11 @@ p {
 }
 
 .skills__img {
-  @apply w-12 lg:w-14 h-12 lg:h-14 border-2 border-gunmetal-bg bg-wisteria/40 rounded-2xl p-1.5 object-fill shadow-inner shadow-gray-950;
+  @apply w-12 lg:w-14 h-12 lg:h-14 border-2 border-gunmetal-bg bg-wisteria/40 rounded-3xl p-1.5 object-fill shadow-inner shadow-gray-950;
 }
 
 .projects {
-  @apply h-52 lg:h-[300px] w-full object-cover rounded-2xl;
+  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl;
 }
 
 .overlay {
@@ -97,3 +97,4 @@ p {
 #slider {
   @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-gradient-to-bl from-purple-500 to-wisteria rounded-full;
 }
+
