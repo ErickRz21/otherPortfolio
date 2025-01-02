@@ -1,0 +1,84 @@
+<section class="main__container" id="pictures" tabindex="-1">
+  <h2>Pictures</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+    <!-- Thumbnail Images -->
+    <img
+      src="eventSearch.jpg"
+      alt="Thumbnail 1"
+      class="projects"
+      data-highres="eventSearch.jpg"
+    />
+    <img
+      src="Batman.jpg"
+      alt="Thumbnail 2"
+      class="projects"
+      data-highres="Batman.jpg"
+    />
+    <img
+      src="thumbnail3.jpg"
+      alt="Thumbnail 3"
+      class="projects"
+      data-highres="highres3.jpg"
+    />
+    <img
+      src="thumbnail4.jpg"
+      alt="Thumbnail 4"
+      class="projects"
+      data-highres="highres4.jpg"
+    />
+  </div>
+
+  <!-- Modal -->
+  <div
+    id="imageModal"
+    class="hidden fixed inset-0 bg-black items-center justify-center z-50"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div>
+      <!-- Close Button -->
+      <button
+        class="absolute top-5 left-5 text-wisteria/80 text-4xl lg:text-6xl hover:text-wisteria/100 active:scale-95 duration-300"
+        id="closeModalButton"
+        aria-label="Close modal"
+      >
+        <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+      </button>
+      <!-- Full Image -->
+      <div>
+        <img id="modalImage" class="max-w-full max-h-screen" alt="Full Image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const thumbnails = document.querySelectorAll(
+      ".main__container img[data-highres]"
+    );
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById(
+      "modalImage"
+    ) as HTMLImageElement;
+    const closeModalButton = document.getElementById("closeModalButton");
+
+    if (!modal || !modalImage || !closeModalButton) return;
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener("click", () => {
+        const highresSrc = thumbnail.getAttribute("data-highres");
+        if (highresSrc) {
+          modalImage.src = highresSrc;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        }
+      });
+    });
+
+    closeModalButton.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+  });
+</script>

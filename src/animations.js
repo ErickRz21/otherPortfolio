@@ -9,6 +9,7 @@ export function runAnimations() {
 document.addEventListener("DOMContentLoaded", () => {
   const mainContainer = document.querySelector(".main__container");
   const workSection = document.querySelector(".work");
+  const picSection = document.querySelector(".picture");
   const footer = document.querySelector("footer");
 
   gsap.from(mainContainer, {
@@ -49,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play none none reverse",
     },
   });
-
   gsap.from(".work", {
     opacity: 0.5,
     y: 50,
@@ -60,7 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: workSection,
       start: "top 90%",
       end: "top 60%",
-      scrub: 0.5,
+      scrub: 1,
+    },
+  });
+
+  gsap.from(".picture", {
+    opacity: 0.5,
+    y: 50,
+    scale: 0.9,
+    duration: 5,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: picSection,
+      start: "top 90%",
+      end: "top 60%",
+      scrub: 1,
     },
   });
 

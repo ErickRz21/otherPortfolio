@@ -63,7 +63,7 @@ p {
 }
 
 .projects {
-  @apply h-52 lg:h-[300px] w-full object-cover;
+  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl;
 }
 
 .overlay {

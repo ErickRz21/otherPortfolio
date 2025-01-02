@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import Skills from "../components/Skills.astro";
 import Work from "../components/Work.astro";
+import Pictures from "@/components/Pictures.astro";
 ---
 
 <Layout title="Home | Portfolio">
   <Navbar />
   <div class="main" id="home">
-    <Navbar />
     <div class="gif">
       <img alt="RaccoonSpaceGif" src="/space.webp" />
     </div>
@@ -42,6 +42,10 @@ import Work from "../components/Work.astro";
     <div class="work">
       <Work />
     </div>
+    <!-- <section class="picture">
+      <Pictures />
+    </section> -->
+    <Pictures />
   </div>
   <script>
     import { runAnimations } from "../animations.js";
