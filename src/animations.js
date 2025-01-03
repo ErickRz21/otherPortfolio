@@ -9,7 +9,7 @@ export function runAnimations() {
 document.addEventListener("DOMContentLoaded", () => {
   const mainContainer = document.querySelector(".main__container");
   const workSection = document.querySelector(".work");
-  const picSection = document.querySelector(".picture");
+  const picSection = document.querySelector("#picture");
   const footer = document.querySelector("footer");
 
   gsap.from(mainContainer, {
@@ -64,19 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  gsap.from(".picture", {
-    opacity: 0.5,
-    y: 50,
-    scale: 0.9,
-    duration: 5,
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: picSection,
-      start: "top 90%",
-      end: "top 60%",
-      scrub: 1,
-    },
-  });
+   // Specific Animation for #picture
+    gsap.from("#picture", {
+      opacity: 0.5,
+      y: 50,
+      scale: 0.9,
+      duration: 5,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: picSection,
+        start: "top 90%",
+        end: "top 60%",
+        scrub: 1,
+        onUpdate: () => {
+          // Prevent any modal effects during animation
+          const modal = document.querySelector("#imageModal");
+          if (modal && !modal.classList.contains("hidden")) {
+            gsap.set(modal, { clearProps: "all" });
+          }
+        },
+      },
+    });
 
   gsap.from(footer, {
     opacity: 1,

@@ -1,11 +1,6 @@
----
-import { gsap } from "gsap";
----
-
-<section class="main__container" id="pictures" tabindex="-1">
+<section class="main__container" id="picture" tabindex="-1">
   <h2>Pictures</h2>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
-    <!-- Thumbnail Images -->
     <img
       src="eventSearch.jpg"
       alt="Thumbnail 1"
@@ -31,30 +26,30 @@ import { gsap } from "gsap";
       data-highres="highres4.jpg"
     />
   </div>
+</section>
 
-  <!-- Modal -->
-  <div
-    id="imageModal"
-    class="hidden fixed inset-0 bg-black items-center justify-center z-50"
-    role="dialog"
-    aria-modal="true"
-  >
+<!-- Modal -->
+<div
+  id="imageModal"
+  class="hidden fixed inset-0 bg-black items-center justify-center z-50"
+  role="dialog"
+  aria-modal="true"
+>
+  <div>
+    <!-- Close Button -->
+    <button
+      class="absolute top-5 left-5 text-wisteria/80 text-4xl lg:text-6xl hover:text-wisteria/100 active:scale-95 duration-300"
+      id="closeModalButton"
+      aria-label="Close modal"
+    >
+      <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+    </button>
+    <!-- Full Image -->
     <div>
-      <!-- Close Button -->
-      <button
-        class="absolute top-5 left-5 text-wisteria/80 text-4xl lg:text-6xl hover:text-wisteria/100 active:scale-95 duration-300"
-        id="closeModalButton"
-        aria-label="Close modal"
-      >
-        <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
-      </button>
-      <!-- Full Image -->
-      <div>
-        <img id="modalImage" class="max-w-full max-h-screen" alt="Full Image" />
-      </div>
+      <img id="modalImage" class="max-w-full max-h-screen" alt="Full Image" />
     </div>
   </div>
-</section>
+</div>
 
 <!-- Custom Script -->
 <script>
