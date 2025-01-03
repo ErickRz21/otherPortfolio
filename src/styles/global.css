@@ -63,7 +63,7 @@ p {
 }
 
 .projects {
-  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl;
+  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl active:scale-[0.98] duration-300;
 }
 
 .overlay {
@@ -97,3 +97,4 @@ p {
 #slider {
   @apply top-[50%] left-0 h-[3.30rem] lg:h-[3.35rem] transform -translate-y-1/2 absolute z-0 transition-all duration-300 ease-in-out bg-gradient-to-bl from-purple-500 to-wisteria rounded-full;
 }
+
