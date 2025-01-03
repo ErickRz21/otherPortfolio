@@ -1,3 +1,7 @@
+---
+import { gsap } from "gsap";
+---
+
 <section class="main__container" id="pictures" tabindex="-1">
   <h2>Pictures</h2>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
@@ -52,7 +56,10 @@
   </div>
 </section>
 
+<!-- Custom Script -->
 <script>
+  import { gsap } from "gsap";
+
   document.addEventListener("DOMContentLoaded", () => {
     const thumbnails = document.querySelectorAll(
       ".main__container img[data-highres]"
@@ -63,37 +70,68 @@
     ) as HTMLImageElement;
     const closeModalButton = document.getElementById("closeModalButton");
 
-    if (!modal || !modalImage || !closeModalButton) return;
+    // Debugging: Check if elements exist
+    if (!modal) return console.error("Modal element not found.");
+    if (!modalImage) return console.error("Modal image element not found.");
+    if (!closeModalButton) return console.error("Close button not found.");
 
-    // Function to close the modal
-    const closeModal = () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+    // Open Modal Function
+    const openModal = (src: string) => {
+      console.log("Opening modal for image:", src);
+      modalImage.src = src;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      gsap.fromTo(
+        modal,
+        { opacity: 0, scale: 0.2 }, // Start slightly smaller
+        {
+          duration: 0.3, // Slightly longer duration
+          opacity: 1,
+          scale: 1,
+          ease: "power2.out", // Smooth easing for a better feel
+        }
+      );
     };
 
-    // Open modal when a thumbnail is clicked
+    // Close Modal Function
+    const closeModal = () => {
+      console.log("Closing modal");
+      gsap.to(modal, {
+        duration: 0.3, // Slightly quicker close
+        opacity: 0,
+        scale: 0.95, // Shrink slightly
+        ease: "power2.out", // Smooth easing for closing
+        onComplete: () => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          modalImage.src = ""; // Clear image source for accessibility
+        },
+      });
+    };
+
+    // Thumbnail Click Listener
     thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener("click", () => {
         const highresSrc = thumbnail.getAttribute("data-highres");
         if (highresSrc) {
-          modalImage.src = highresSrc;
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
+          openModal(highresSrc);
+        } else {
+          console.warn("High-res image source not found.");
         }
       });
     });
 
-    // Close modal when the close button is clicked
+    // Close Button Listener
     closeModalButton.addEventListener("click", closeModal);
 
-    // Close modal when pressing the Escape key
+    // Escape Key Listener
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeModal();
       }
     });
 
-    // Close modal when clicking outside the picture
+    // Outside Modal Click Listener
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
         closeModal();
