@@ -65,6 +65,13 @@
 
     if (!modal || !modalImage || !closeModalButton) return;
 
+    // Function to close the modal
+    const closeModal = () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    };
+
+    // Open modal when a thumbnail is clicked
     thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener("click", () => {
         const highresSrc = thumbnail.getAttribute("data-highres");
@@ -76,9 +83,21 @@
       });
     });
 
-    closeModalButton.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+    // Close modal when the close button is clicked
+    closeModalButton.addEventListener("click", closeModal);
+
+    // Close modal when pressing the Escape key
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // Close modal when clicking outside the picture
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
     });
   });
 </script>
