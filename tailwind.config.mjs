@@ -7,6 +7,8 @@ export default {
 				'gunmetal': '#1E252E',
 				'gunmetal-bg': '#28323E',
 				'wisteria': '#B4A0E5',
+				'sage': '#C9C19F',
+				'ecru': '#AEA36F'
 			},
 		},
 	},
