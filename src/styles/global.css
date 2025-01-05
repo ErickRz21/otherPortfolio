@@ -57,7 +57,7 @@ p {
 }
 
 .projects {
-  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl active:scale-[0.98] duration-300;
+  @apply h-52 lg:h-[300px] w-full object-cover rounded-3xl active:scale-[0.98] duration-300 hover:opacity-80 cursor-pointer;
 }
 
 .overlay {
