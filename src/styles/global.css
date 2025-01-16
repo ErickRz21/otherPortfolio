@@ -28,7 +28,7 @@ h2 {
 }
 
 p {
-  @apply text-lg lg:text-base text-start font-semibold;
+  @apply text-base lg:text-base text-start font-semibold;
   font-family: var(--body);
 }
 
