@@ -7,6 +7,12 @@ const projects = await getCollection("projects");
 
 <section class="main__container" id="projects" tabindex="-1">
   <h2 class="mt-0">Projects</h2>
+  <p class="mb-3">
+    Here are some of the projects I have worked on recently. Each project
+    showcases different skills and technologies that I have learned and applied.
+    Feel free to click on any project to see more details about it, including a
+    description, the technologies used, and images.
+  </p>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
     {
       projects.map((project) => (
@@ -32,9 +38,7 @@ const projects = await getCollection("projects");
                 </p>
                 <div class="flex mt-1">
                   {project.data.stack?.split(",").map((tech) => (
-                    <p class="badge mr-1">
-                      {tech.trim()}
-                    </p>
+                    <p class="badge mr-1">{tech.trim()}</p>
                   ))}
                 </div>
               </div>
