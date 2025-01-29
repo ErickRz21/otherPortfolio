@@ -1,31 +1,57 @@
 <section class="main__container" id="picture" tabindex="-1">
   <h2 class="mt-0">Pictures</h2>
-  <p class="mb-3">Feel free to browse through the gallery and enjoy the moments captured in these images. Each picture tells a story and holds a special memory from my adventures around the world.</p>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
-    <img
-      src="Solitud.jpg"
-      alt="Thumbnail 1"
-      class="projects hover:backdrop-opacity-80"
-      data-highres="Solitud.jpg"
-    />
-    <img
-      src="Forest.jpg"
-      alt="Thumbnail 2"
-      class="projects"
-      data-highres="Forest.jpg"
-    />
-    <img
-      src="Waters.jpg"
-      alt="Thumbnail 3"
-      class="projects"
-      data-highres="Waters.jpg"
-    />
-    <img
-      src="Rock.jpg"
-      alt="Thumbnail 4"
-      class="projects"
-      data-highres="Rock.jpg"
-    />
+  <p class="mb-3">
+    Feel free to browse through the gallery and enjoy the moments captured in
+    these images. Each picture tells a story and holds a special memory from my
+    adventures around the world.
+  </p>
+
+  <!-- Slider Container -->
+  <div class="relative overflow-hidden rounded-2xl lg:h-[50rem]">
+    <!-- Slider Track -->
+    <div
+      id="sliderTrack"
+      class="flex transition-transform duration-300 ease-in-out"
+    >
+      <img
+        src="Solitud.jpg"
+        alt="Thumbnail 1"
+        class="w-full flex-shrink-0"
+        data-highres="Solitud.jpg"
+      />
+      <img
+        src="Forest.jpg"
+        alt="Thumbnail 2"
+        class="w-full flex-shrink-0"
+        data-highres="Forest.jpg"
+      />
+      <img
+        src="Waters.jpg"
+        alt="Thumbnail 3"
+        class="w-full flex-shrink-0"
+        data-highres="Waters.jpg"
+      />
+      <img
+        src="Rock.jpg"
+        alt="Thumbnail 4"
+        class="w-full flex-shrink-0"
+        data-highres="Rock.jpg"
+      />
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button
+      id="prevButton"
+      class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 text-lg lg:text-2xl rounded-full hover:bg-black/70"
+    >
+      &larr;
+    </button>
+    <button
+      id="nextButton"
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 text-lg lg:text-2xl rounded-full hover:bg-black/70"
+    >
+      &rarr;
+    </button>
   </div>
 </section>
 
@@ -132,6 +158,76 @@
       if (event.target === modal) {
         closeModal();
       }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderTrack = document.getElementById("sliderTrack");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+
+    // Check if all required elements exist
+    if (!sliderTrack || !prevButton || !nextButton) {
+      console.error(
+        "Slider elements not found. Please check the HTML structure."
+      );
+      return;
+    }
+
+    const images = document.querySelectorAll("#sliderTrack img");
+    let currentIndex = 0;
+
+    const updateSlider = () => {
+      const offset = -currentIndex * 100;
+      sliderTrack.style.transform = `translateX(${offset}%)`;
+    };
+
+    // Previous Button Click Handler
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = images.length - 1; // Loop to the last image
+      }
+      updateSlider();
+    });
+
+    // Next Button Click Handler
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Loop to the first image
+      }
+      updateSlider();
+    });
+
+    // Optional: Auto-slide every 5 seconds
+    let autoSlideInterval = setInterval(() => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateSlider();
+    }, 5000);
+
+    // Optional: Pause auto-slide on hover
+    sliderTrack.addEventListener("mouseenter", () => {
+      clearInterval(autoSlideInterval);
+    });
+
+    sliderTrack.addEventListener("mouseleave", () => {
+      autoSlideInterval = setInterval(() => {
+        if (currentIndex < images.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlider();
+      }, 5000);
     });
   });
 </script>
