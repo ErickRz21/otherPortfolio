@@ -40,18 +40,8 @@
     </div>
 
     <!-- Navigation Buttons -->
-    <button
-      id="prevButton"
-      class="left-3"
-    >
-      &larr;
-    </button>
-    <button
-      id="nextButton"
-      class="right-3"
-    >
-      &rarr;
-    </button>
+    <button id="prevButton" class="left-3"> &larr; </button>
+    <button id="nextButton" class="right-3"> &rarr; </button>
   </div>
 </section>
 
@@ -65,11 +55,15 @@
   <div>
     <!-- Close Button -->
     <button
-      class="absolute top-5 left-5 text-ecru/80 text-4xl lg:text-5xl hover:text-neutral-400 active:scale-95 duration-300"
+      class="absolute top-5 left-5 text-white/70 text-4xl lg:text-5xl hover:scale-105 active:scale-95 duration-500"
       id="closeModalButton"
       aria-label="Close modal"
     >
-      <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+      <div
+        class="px-3 bg-neutral-800/70 rounded-full"
+      >
+        <span class="relative top-[-0.03em] font-extralight">&times;</span>
+      </div>
     </button>
     <!-- Full Image -->
     <div>
