@@ -1,50 +1,75 @@
 <section class="main__container" id="picture" tabindex="-1">
-  <h2 class="mt-0">Pictures</h2>
-  <p class="mb-3">
-    Feel free to browse through the gallery and enjoy the moments captured in
-    these images. Each picture tells a story and holds a special memory from my
-    adventures around the world.
-  </p>
+      <h2 class="mt-0">Pictures</h2>
+      <p class="mb-3">
+        Feel free to browse through the gallery and enjoy the moments captured in
+        these images. Each picture tells a story and holds a special memory from my
+        adventures around the world.
+      </p>
 
-  <!-- Slider Container -->
-  <div class="relative overflow-hidden rounded-2xl lg:h-[50rem]">
-    <!-- Slider Track -->
-    <div
-      id="sliderTrack"
-      class="flex transition-transform duration-500 ease-in-out h-full"
-    >
-      <img
-        src="Solitud.jpg"
-        alt="Thumbnail 1"
-        class="w-full flex-shrink-0 object-cover"
-        data-highres="Solitud.jpg"
-      />
-      <img
-        src="Forest.jpg"
-        alt="Thumbnail 2"
-        class="w-full flex-shrink-0 object-cover"
-        data-highres="Forest.jpg"
-      />
-      <img
-        src="Waters.jpg"
-        alt="Thumbnail 3"
-        class="w-full flex-shrink-0 object-cover"
-        data-highres="Waters.jpg"
-      />
-      <img
-        src="Rock.jpg"
-        alt="Thumbnail 4"
-        class="w-full flex-shrink-0 object-cover"
-        data-highres="Rock.jpg"
-      />
-    </div>
-  </div>
+      <!-- Slider Container -->
+      <div class="relative overflow-hidden rounded-2xl lg:h-[50rem]">
+        <!-- Slider Track -->
+        <div
+          id="sliderTrack"
+          class="flex transition-transform duration-500 ease-in-out h-full"
+        >
+          <img
+            src="Solitud.jpg"
+            alt="Thumbnail 1"
+            class="w-full flex-shrink-0 object-cover"
+            data-highres="Solitud.jpg"
+          />
+          <img
+            src="Forest.jpg"
+            alt="Thumbnail 2"
+            class="w-full flex-shrink-0 object-cover"
+            data-highres="Forest.jpg"
+          />
+          <img
+            src="Waters.jpg"
+            alt="Thumbnail 3"
+            class="w-full flex-shrink-0 object-cover"
+            data-highres="Waters.jpg"
+          />
+          <img
+            src="Rock.jpg"
+            alt="Thumbnail 4"
+            class="w-full flex-shrink-0 object-cover"
+            data-highres="Rock.jpg"
+          />
+        </div>
 
-  <!-- Navigation Buttons -->
-  <button id="prevButton" class="left-3"> &larr; </button>
-  <button id="nextButton" class="right-3"> &rarr; </button>
-</section>
+        <!-- Navigation Buttons -->
+        <button
+          id="prevButton"
+          class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-gray-700/50 rounded-full p-2 text-white hover:bg-gray-600/70 transition duration-300"
+        >
+          &larr;
+        </button>
+        <button
+          id="nextButton"
+          class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-gray-700/50 rounded-full p-2 text-white hover:bg-gray-600/70 transition duration-300"
+        >
+          &rarr;
+        </button>
 
+        <!-- Pagination Dots -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 pagination-dots">
+          <button
+            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+          ></button>
+          <button
+            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+          ></button>
+          <button
+            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+          ></button>
+          <button
+            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+          ></button>
+        </div>
+      </div>
+    </section>
 <!-- Modal -->
 <div
   id="imageModal"
@@ -73,15 +98,107 @@
 <!-- Custom Script -->
 <script>
   import { gsap } from "gsap";
-
   document.addEventListener("DOMContentLoaded", () => {
+    // Slider Functionality
+    const sliderTrack = document.getElementById("sliderTrack");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const paginationDots = document.querySelectorAll(".pagination-dots button");
+
+    // Check if all required elements exist
+    if (
+      !sliderTrack ||
+      !prevButton ||
+      !nextButton ||
+      paginationDots.length === 0
+    ) {
+      console.error(
+        "Slider elements not found. Please check the HTML structure."
+      );
+      return;
+    }
+
+    const images = document.querySelectorAll("#sliderTrack img");
+    let currentIndex = 0;
+
+    // Update slider position
+    const updateSlider = () => {
+      const offset = -currentIndex * 100;
+      sliderTrack.style.transform = `translateX(${offset}%)`;
+      updatePaginationDots();
+    };
+
+    // Update active pagination dot
+    const updatePaginationDots = () => {
+      paginationDots.forEach((dot, index) => {
+        dot.classList.toggle("bg-white", index === currentIndex);
+        dot.classList.toggle("bg-white/50", index !== currentIndex);
+      });
+    };
+
+    // Previous Button Click Handler
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = images.length - 1; // Loop to the last image
+      }
+      updateSlider();
+    });
+
+    // Next Button Click Handler
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Loop to the first image
+      }
+      updateSlider();
+    });
+
+    // Pagination Dot Click Handler
+    paginationDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+
+    // Optional: Auto-slide every 5 seconds
+    let autoSlideInterval = setInterval(() => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateSlider();
+    }, 5000);
+
+    // Optional: Pause auto-slide on hover
+    sliderTrack.addEventListener("mouseenter", () => {
+      clearInterval(autoSlideInterval);
+    });
+
+    sliderTrack.addEventListener("mouseleave", () => {
+      autoSlideInterval = setInterval(() => {
+        if (currentIndex < images.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlider();
+      }, 5000);
+    });
+
+    // Initialize active dot
+    updatePaginationDots();
+
+    // Modal Functionality
     const thumbnails = document.querySelectorAll(
       ".main__container img[data-highres]"
     );
     const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById(
-      "modalImage"
-    ) as HTMLImageElement;
+    const modalImage = document.getElementById("modalImage") as HTMLImageElement;
     const closeModalButton = document.getElementById("closeModalButton");
 
     // Debugging: Check if elements exist
@@ -150,76 +267,6 @@
       if (event.target === modal) {
         closeModal();
       }
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sliderTrack = document.getElementById("sliderTrack");
-    const prevButton = document.getElementById("prevButton");
-    const nextButton = document.getElementById("nextButton");
-
-    // Check if all required elements exist
-    if (!sliderTrack || !prevButton || !nextButton) {
-      console.error(
-        "Slider elements not found. Please check the HTML structure."
-      );
-      return;
-    }
-
-    const images = document.querySelectorAll("#sliderTrack img");
-    let currentIndex = 0;
-
-    const updateSlider = () => {
-      const offset = -currentIndex * 100;
-      sliderTrack.style.transform = `translateX(${offset}%)`;
-    };
-
-    // Previous Button Click Handler
-    prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-      } else {
-        currentIndex = images.length - 1; // Loop to the last image
-      }
-      updateSlider();
-    });
-
-    // Next Button Click Handler
-    nextButton.addEventListener("click", () => {
-      if (currentIndex < images.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0; // Loop to the first image
-      }
-      updateSlider();
-    });
-
-    // Optional: Auto-slide every 5 seconds
-    let autoSlideInterval = setInterval(() => {
-      if (currentIndex < images.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      updateSlider();
-    }, 5000);
-
-    // Optional: Pause auto-slide on hover
-    sliderTrack.addEventListener("mouseenter", () => {
-      clearInterval(autoSlideInterval);
-    });
-
-    sliderTrack.addEventListener("mouseleave", () => {
-      autoSlideInterval = setInterval(() => {
-        if (currentIndex < images.length - 1) {
-          currentIndex++;
-        } else {
-          currentIndex = 0;
-        }
-        updateSlider();
-      }, 5000);
     });
   });
 </script>
