@@ -1,75 +1,71 @@
 <section class="main__container" id="picture" tabindex="-1">
-      <h2 class="mt-0">Pictures</h2>
-      <p class="mb-3">
-        Feel free to browse through the gallery and enjoy the moments captured in
-        these images. Each picture tells a story and holds a special memory from my
-        adventures around the world.
-      </p>
+  <h2 class="mt-0">Pictures</h2>
+  <p class="mb-3">
+    Feel free to browse through the gallery and enjoy the moments captured in
+    these images. Each picture tells a story and holds a special memory from my
+    adventures around the world.
+  </p>
 
-      <!-- Slider Container -->
-      <div class="relative overflow-hidden rounded-2xl lg:h-[50rem]">
-        <!-- Slider Track -->
-        <div
-          id="sliderTrack"
-          class="flex transition-transform duration-500 ease-in-out h-full"
-        >
-          <img
-            src="Solitud.jpg"
-            alt="Thumbnail 1"
-            class="w-full flex-shrink-0 object-cover"
-            data-highres="Solitud.jpg"
-          />
-          <img
-            src="Forest.jpg"
-            alt="Thumbnail 2"
-            class="w-full flex-shrink-0 object-cover"
-            data-highres="Forest.jpg"
-          />
-          <img
-            src="Waters.jpg"
-            alt="Thumbnail 3"
-            class="w-full flex-shrink-0 object-cover"
-            data-highres="Waters.jpg"
-          />
-          <img
-            src="Rock.jpg"
-            alt="Thumbnail 4"
-            class="w-full flex-shrink-0 object-cover"
-            data-highres="Rock.jpg"
-          />
-        </div>
+  <!-- Slider Container -->
+  <div class="relative overflow-hidden rounded-2xl lg:h-[50rem]">
+    <!-- Slider Track -->
+    <div
+      id="sliderTrack"
+      class="flex transition-transform duration-500 ease-in-out h-full"
+    >
+      <img
+        src="Solitud.jpg"
+        alt="Thumbnail 1"
+        class="w-full flex-shrink-0 object-cover"
+        data-highres="Solitud.jpg"
+      />
+      <img
+        src="Forest.jpg"
+        alt="Thumbnail 2"
+        class="w-full flex-shrink-0 object-cover"
+        data-highres="Forest.jpg"
+      />
+      <img
+        src="Waters.jpg"
+        alt="Thumbnail 3"
+        class="w-full flex-shrink-0 object-cover"
+        data-highres="Waters.jpg"
+      />
+      <img
+        src="Rock.jpg"
+        alt="Thumbnail 4"
+        class="w-full flex-shrink-0 object-cover"
+        data-highres="Rock.jpg"
+      />
+    </div>
 
-        <!-- Navigation Buttons -->
-        <button
-          id="prevButton"
-          class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-gray-700/50 rounded-full p-2 text-white hover:bg-gray-600/70 transition duration-300"
-        >
-          &larr;
-        </button>
-        <button
-          id="nextButton"
-          class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-gray-700/50 rounded-full p-2 text-white hover:bg-gray-600/70 transition duration-300"
-        >
-          &rarr;
-        </button>
+    <!-- Navigation Buttons -->
+    <button id="prevButton" class="left-3">
+      <i class="fa-solid fa-arrow-left p-3"></i>
+    </button>
+    <button id="nextButton" class="right-3">
+      <i class="fa-solid fa-arrow-right p-3"></i>
+    </button>
 
-        <!-- Pagination Dots -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 pagination-dots">
-          <button
-            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
-          ></button>
-          <button
-            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
-          ></button>
-          <button
-            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
-          ></button>
-          <button
-            class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
-          ></button>
-        </div>
-      </div>
-    </section>
+    <!-- Pagination Dots -->
+    <div
+      class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 pagination-dots"
+    >
+      <button
+        class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+      ></button>
+      <button
+        class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+      ></button>
+      <button
+        class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+      ></button>
+      <button
+        class="w-2 h-2 bg-white/50 rounded-full hover:bg-white transition duration-300"
+      ></button>
+    </div>
+  </div>
+</section>
 <!-- Modal -->
 <div
   id="imageModal"
@@ -198,7 +194,9 @@
       ".main__container img[data-highres]"
     );
     const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage") as HTMLImageElement;
+    const modalImage = document.getElementById(
+      "modalImage"
+    ) as HTMLImageElement;
     const closeModalButton = document.getElementById("closeModalButton");
 
     // Debugging: Check if elements exist
