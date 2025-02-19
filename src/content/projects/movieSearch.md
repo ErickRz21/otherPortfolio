@@ -1,6 +1,6 @@
 ---
 title: "Movie Search"
-description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+description: "A dynamic web page built using pure HTML, CSS, and JavaScript that fetches movie data from the OMDb API."
 image:
   url: "/movieSearch.jpg"
   alt: "movieSearch"
@@ -16,4 +16,4 @@ website: https://moviesearchys.netlify.app/
 github: https://github.com/ErickRz21/BuscadorPeliculas
 ---
 
-Web Page made with pure HTML, CSS and JavaScript. Using OMDb Api to fetch data from movies stored on it.
+A dynamic web page built using pure HTML, CSS, and JavaScript that fetches movie data from the OMDb API. Users can search for movies by title and retrieve detailed information, including the plot, release year, genre, director, cast, and IMDb ratings. The page features a clean and responsive design, ensuring a smooth user experience across different devices. JavaScript is used to handle API requests and dynamically update the content without requiring a page reload.

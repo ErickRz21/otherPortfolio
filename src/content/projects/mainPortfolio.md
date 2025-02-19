@@ -1,6 +1,6 @@
 ---
 title: "Portfolio"
-description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+description: "This portfolio showcases a variety of web development projects that I have worked on."
 image:
   url: "/oldPortfolio.jpg"
   alt: "Batman"

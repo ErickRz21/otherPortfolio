@@ -1,6 +1,6 @@
 ---
 title: "Event App"
-description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+description: "A web application that allows users to search for events happening in Monterrey using the Ticketmaster API."
 image:
   url: "/eventSearch.jpg"
   alt: "Events Search"
@@ -12,8 +12,8 @@ worksImage2:
   alt: "second image of your project."
 platform: Web
 stack: React, TailWindCSS, TypeScript
-website: https://astro-milky-way.netlify.app/
-github: https://github.com/ttomczak3/Milky-Way
+website: "null"
+github: "null"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+A web application that allows users to search for events happening in Monterrey using the Ticketmaster API. The app provides a seamless experience for discovering concerts, sports events, theater performances, and other entertainment options in the city. Users can filter events based on categories, dates, and venues to find exactly what they are looking for. The application fetches real-time data from the Ticketmaster API, ensuring that event listings are always up to date.
