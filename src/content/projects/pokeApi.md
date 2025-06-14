@@ -1,9 +1,9 @@
 ---
-title: "PokeDex"
+title: "Pokédex"
 description: "A responsive NextJS web app that fetches and displays Pokémon details, stats, and information using the PokeAPI."
 image:
   url: "/poke.jpg"
-  alt: "PokeDex"
+  alt: "Pokédex"
 platform: Web
 stack: Next.js, TypeScript, TailwindCSS
 website: https://poke-api-topaz.vercel.app/
