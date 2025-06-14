@@ -4,14 +4,8 @@ description: "A web application that allows users to search for events happening
 image:
   url: "/eventSearch.jpg"
   alt: "Events Search"
-worksImage1:
-  url: "/image-1.webp"
-  alt: "first image of your project."
-worksImage2:
-  url: "/image-2.webp"
-  alt: "second image of your project."
 platform: Web
-stack: React, TailWindCSS, TypeScript
+stack: React, TypesScript, Tailwindcss
 website: "null"
 github: "null"
 ---

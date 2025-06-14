@@ -3,13 +3,7 @@ title: "Movie Search"
 description: "A dynamic web page built using pure HTML, CSS, and JavaScript that fetches movie data from the OMDb API."
 image:
   url: "/movieSearch.jpg"
-  alt: "movieSearch"
-worksImage1:
-  url: "/image-1.webp"
-  alt: "first image of your project."
-worksImage2:
-  url: "/image-2.webp"
-  alt: "second image of your project."
+  alt: "Movie Search"
 platform: Web
 stack: HTML, CSS, JavaScript
 website: https://moviesearchys.netlify.app/

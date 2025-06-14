@@ -4,14 +4,8 @@ description: "A responsive NextJS web app that fetches and displays Pokémon det
 image:
   url: "/poke.jpg"
   alt: "PokeDex"
-worksImage1:
-  url: "/image-1.jpg"
-  alt: "first image of your project."
-worksImage2:
-  url: "/image-2.webp"
-  alt: "second image of your project."
 platform: Web
-stack: Next.js, TypeScript, TailWindCSS
+stack: Next.js, TypeScript, TailwindCSS
 website: https://poke-api-topaz.vercel.app/
 github: https://github.com/ErickRz21/poke-api
 ---

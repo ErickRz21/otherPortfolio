@@ -3,15 +3,9 @@ title: "Weather App"
 description: "A responsive web application built with React that provides real-time weather information for cities around the world using the OpenWeather API."
 image:
   url: "/weatherApp.jpg"
-  alt: "Batman"
-worksImage1:
-  url: "/weather.jpg"
-  alt: "first image of your project."
-worksImage2:
-  url: "/image-2.webp"
-  alt: "second image of your project."
+  alt: "WeatherApp"
 platform: Web
-stack: React, TailWindCSS, TypeScript
+stack: React, TypeScript, TailwindCSS
 website: https://weatherarc.netlify.app/
 github: https://github.com/ErickRz21/weatherAPI
 ---

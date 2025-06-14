@@ -3,13 +3,7 @@ title: "Portfolio"
 description: "This portfolio showcases a variety of web development projects that I have worked on."
 image:
   url: "/oldPortfolio.jpg"
-  alt: "Batman"
-worksImage1:
-  url: "/image-1.webp"
-  alt: "first image of your project."
-worksImage2:
-  url: "/image-2.webp"
-  alt: "second image of your project."
+  alt: "Portfolio Image"
 platform: Web
 stack: HTML, CSS, JavaScript
 website: https://erickrz21.github.io/
