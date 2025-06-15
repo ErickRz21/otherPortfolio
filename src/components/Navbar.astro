@@ -19,9 +19,9 @@
       <div id="slider"></div>
 
       <!-- Links -->
-      <li><a href="/#home" class="nav-link" tabindex="0">Home</a></li>
-      <li><a href="/#projects" class="nav-link">Works</a></li>
-      <li><a href="/#footer" class="nav-link">Contact</a></li>
+      <li><a href="#home" class="nav-link" tabindex="0">Home</a></li>
+      <li><a href="#projects" class="nav-link">Works</a></li>
+      <li><a href="#footer" class="nav-link">Contact</a></li>
     </div>
   </ul>
 </nav>
@@ -98,11 +98,22 @@
   // Bind click events
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      const targetId = href?.split("#")[1];
+      const isOnHomePage =
+        window.location.pathname === "/" ||
+        window.location.pathname === "/index.html";
+
+      if (!targetId) return;
+
+      if (!isOnHomePage) {
+        // Use assign instead of setting location.href to trigger full page load
+        window.location.assign(`/#${targetId}`);
+        return;
+      }
+
       e.preventDefault();
-
-      const targetId = link.getAttribute("href")?.substring(1);
-      const targetElement = targetId ? document.getElementById(targetId) : null;
-
+      const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
@@ -114,12 +125,23 @@
 
   // Set initial position on load
   window.addEventListener("DOMContentLoaded", () => {
-    const active =
-      document.querySelector<HTMLAnchorElement>(".nav-link.active") ||
-      navLinks[0];
-    if (active) {
-      activateLink(active);
-      animateSliderTo(active);
+    const hash = window.location.hash.replace("#", "");
+    const activeLink =
+      Array.from(navLinks).find((link) =>
+        link.getAttribute("href")?.includes(hash)
+      ) || navLinks[0];
+
+    activateLink(activeLink);
+    animateSliderTo(activeLink);
+
+    // Scroll to the section manually after load
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 100); // slight delay ensures layout is ready
+      }
     }
   });
 </script>
