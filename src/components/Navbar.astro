@@ -3,24 +3,26 @@
   role="navigation"
   aria-label="Main navigation"
 >
-  <ul
-    class="relative flex justify-center space-x-0 font-semibold text-lg items-center"
-  >
-    <!-- Slider indicator -->
-    <div id="slider"></div>
-    <!-- Navigation links -->
+  <ul class="relative flex items-center justify-center font-semibold text-lg">
+    <!-- Logo (Not part of sliding navigation) -->
     <li class="hidden lg:block px-6">
-      <h2 class="text-3xl no-underline my-0 pb-1 flex bg-gradient-to-l from-sage to-white text-transparent bg-clip-text font-bold">Portfolio</h2>
+      <h2
+        class="text-3xl no-underline my-0 pb-1 flex bg-gradient-to-l from-sage to-white text-transparent bg-clip-text font-bold"
+      >
+        Portfolio
+      </h2>
     </li>
-    <li>
-      <a href="/#home" class="nav-link" tabindex="0">Home</a>
-    </li>
-    <li>
-      <a href="/#projects" class="nav-link">Works</a>
-    </li>
-    <li>
-      <a href="/#footer" class="nav-link">Contact</a>
-    </li>
+
+    <!-- Nav links wrapper (used for slider positioning) -->
+    <div class="relative flex items-center" id="nav-links-wrapper">
+      <!-- Slider -->
+      <div id="slider"></div>
+
+      <!-- Links -->
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#projects" class="nav-link">Works</a></li>
+      <li><a href="#footer" class="nav-link">Contact</a></li>
+    </div>
   </ul>
 </nav>
 
@@ -47,14 +49,30 @@
     });
   });
 
+  import { gsap } from "gsap";
   const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
   const slider = document.getElementById("slider") as HTMLElement | null;
 
   function updateSlider(link: HTMLAnchorElement): void {
     if (slider) {
-      const { offsetWidth, offsetLeft } = link; // Get link's dimensions
-      slider.style.width = `${offsetWidth}px`;
-      slider.style.left = `${offsetLeft}px`;
+      const { offsetWidth, offsetLeft } = link;
+
+      gsap.to(slider, {
+        width: offsetWidth,
+        left: offsetLeft,
+        scaleX: 1.2, // scale up a bit
+        transformOrigin: "center", // scales from center
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+          // Return to normal scale after animation
+          gsap.to(slider, {
+            scaleX: 1,
+            duration: 0.15,
+            ease: "power1.in",
+          });
+        },
+      });
     }
   }
 
