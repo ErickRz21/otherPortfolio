@@ -19,9 +19,9 @@
       <div id="slider"></div>
 
       <!-- Links -->
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#projects" class="nav-link">Works</a></li>
-      <li><a href="#footer" class="nav-link">Contact</a></li>
+      <li><a href="/#home" class="nav-link" tabindex="0">Home</a></li>
+      <li><a href="/#projects" class="nav-link">Works</a></li>
+      <li><a href="/#footer" class="nav-link">Contact</a></li>
     </div>
   </ul>
 </nav>
@@ -51,40 +51,75 @@
 
   import { gsap } from "gsap";
   const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
-  const slider = document.getElementById("slider") as HTMLElement | null;
+  const slider = document.getElementById("slider");
+  const navWrapper = document.getElementById("nav-links-wrapper");
 
-  function updateSlider(link: HTMLAnchorElement): void {
-    if (slider) {
-      const { offsetWidth, offsetLeft } = link;
+  function animateSliderTo(link: HTMLAnchorElement) {
+    if (!slider || !navWrapper) return;
 
-      gsap.to(slider, {
-        width: offsetWidth,
-        left: offsetLeft,
-        scaleX: 1.2, // scale up a bit
-        transformOrigin: "center", // scales from center
-        duration: 0.2,
-        ease: "power2.in",
-        onComplete: () => {
-          // Return to normal scale after animation
-          gsap.to(slider, {
-            scaleX: 1,
-            duration: 0.15,
-            ease: "power1.in",
-          });
-        },
+    const linkRect = link.getBoundingClientRect();
+    const wrapperRect = navWrapper.getBoundingClientRect();
+    const relativeLeft = linkRect.left - wrapperRect.left;
+    const width = link.offsetWidth;
+
+    slider.classList.add("blurred");
+    // ... then after animation
+    setTimeout(() => {
+      slider.classList.remove("blurred");
+    }, 300); // match with animation timing
+
+    // Animate to new position with slight scale effect
+    gsap
+      .timeline()
+      .to(slider, {
+        scaleX: 1.2,
+        filter: "blur(4px)",
+        duration: 0.3,
+        ease: "power2.out",
+      })
+      .to(slider, {
+        width,
+        left: relativeLeft,
+        duration: 0.125, // move instantly while blurred
+      })
+      .to(slider, {
+        scaleX: 1,
+        filter: "blur(0px)",
+        duration: 0.3,
+        ease: "power2.out",
       });
-    }
   }
 
-  // Add focus event listeners to each navigation link
+  function activateLink(link: HTMLElement | null) {
+    navLinks.forEach((l) => l.classList.remove("active"));
+    if (link) link.classList.add("active");
+  }
+
+  // Bind click events
   navLinks.forEach((link) => {
-    link.addEventListener("focus", () => updateSlider(link));
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const targetId = link.getAttribute("href")?.substring(1);
+      const targetElement = targetId ? document.getElementById(targetId) : null;
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+
+      activateLink(link);
+      animateSliderTo(link);
+    });
   });
 
-  // Set the slider on initial load (default to the first link)
+  // Set initial position on load
   window.addEventListener("DOMContentLoaded", () => {
-    if (slider && navLinks.length > 0) {
-      updateSlider(navLinks[0]); // Defaults to the first link
+    const active =
+      document.querySelector<HTMLAnchorElement>(".nav-link.active") ||
+      navLinks[0];
+    if (active) {
+      activateLink(active);
+      animateSliderTo(active);
     }
   });
 </script>
